@@ -14,9 +14,8 @@ Summary: Create QRcode in R.
 Current build status
 ====================
 
-[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-qrcode-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-qrcode-feedstock)
-[![OSX](https://img.shields.io/travis/conda-forge/r-qrcode-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-qrcode-feedstock)
-[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-qrcode-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-qrcode-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/r-qrcode-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/r-qrcode-feedstock)
 
 Current release info
 ====================
