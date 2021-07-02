@@ -1,4 +1,4 @@
-{% set version = '0.1.1' %}
+{% set version = "0.1.3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,12 +11,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/qrcode_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/qrcode/qrcode_{{ version }}.tar.gz
-  sha256: f8455273f816832a9ce6c9de77f6a15f6d086be1d94bd6c09d8fb6b8d16a408a
+  sha256: 7e2f013f93aa41d9d6f84f62997ae2eac4ce2088229364e3f81dea13c57c0637
 
 build:
   noarch: generic
-  merge_build_host: True  # [win]
-  number: 1002
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -43,7 +43,7 @@ about:
   license: GPL-3
   summary: Create QRcode in R.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
