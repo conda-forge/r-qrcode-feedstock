@@ -13,9 +13,9 @@ source:
   sha256: d89ced2609ca39020c53c8a82d197843bc602843be7c585f0bd377e52b3d56aa
 
 build:
-  noarch: generic
-  merge_build_host: true  # [win]
+  merge_build_host: True  # [win]
   number: 0
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
@@ -23,13 +23,16 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-r.utils
+    - r-assertthat
     - r-stringr
   run:
     - r-base
     - r-r.utils
+    - r-assertthat
     - r-stringr
 
 test:
@@ -39,17 +42,12 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=qrcode
-  license: GPL-3
+  license: GPL-3.0-only
   summary: Create QRcode in R.
   license_family: GPL3
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
