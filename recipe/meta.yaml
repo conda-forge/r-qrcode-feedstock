@@ -7,7 +7,6 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: qrcode_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/qrcode_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/qrcode/qrcode_{{ version }}.tar.gz
