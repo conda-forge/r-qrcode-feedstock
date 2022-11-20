@@ -1,4 +1,4 @@
-{% set version = "0.1.4" %}
+{% set version = "0.2.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/qrcode_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/qrcode/qrcode_{{ version }}.tar.gz
-  sha256: d89ced2609ca39020c53c8a82d197843bc602843be7c585f0bd377e52b3d56aa
+  sha256: 5db858a9341f97945672d4c28f56ea2993525e02290876536a80513ba6dbe210
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -26,14 +26,12 @@ requirements:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
-    - r-r.utils
     - r-assertthat
-    - r-stringr
+    - r-knitr
   run:
     - r-base
-    - r-r.utils
     - r-assertthat
-    - r-stringr
+    - r-knitr
 
 test:
   commands:
